@@ -1,14 +1,22 @@
-require 'enter_names.rb'
+require 'spec_helper'
 
-describe 'enter_names' do
-  # subject(:enter_name) {described_class.new}
+feature Battle do
 
-  it 'tests webpage' do
-    expect(visit('localhost/')).to be
+  it 'visits the webpage' do
+    visit '/'
+    expect(page).to have_content 'Hello Battle!'
   end
-  #
-  # it 'should allow enter name to accept Agata' do
-  #   expect(enter_name).to fill_in('player_1', with: 'Agata')
-  # end
+
+  it 'test that player 1 can enter a name in the player 1 form' do
+    visit '/enter_names'
+    fill_in 'player_1', :with => 'Trump'
+  end
+
+  it 'test that player 2 can enter a name in the player 2 form' do
+    visit '/enter_names'
+    fill_in 'player_2', :with => 'Clinton'
+  end
+
+
 
 end
