@@ -2,21 +2,28 @@ require 'spec_helper'
 
 feature Battle do
 
-  describe 'enter names' do
-    it 'test that player 1 can enter a name in the player 1 form' do
-      visit '/'
-      fill_in 'player1', :with => 'A'
-      fill_in 'player2', :with => 'B'
-      click_button 'Submit'
-    end
+  before(:each) do
+    sign_in_and_play
+  end
 
+  context 'enter names' do
     it 'tests that filling in the player_1 and player_2 form returns the names' do
-      visit '/'
-      fill_in('player1', with: 'A')
-      fill_in('player2', with: 'B')
-      click_button('Submit')
       expect(page).to have_content('A vs B')
     end
   end
 
+  context 'hitpoints' do
+    it 'checks player 2\'s hitpoints' do
+      expect(page).to have_content('Hitpoints: 100')
+    end
+
+    it 'gets a confirmation that player2 has been attacked' do
+      expect(page).to have_content('Player 2 attacked')
+    end
+
+    it 'returns the confirmation when Hit button gets clicked on' do
+      click_button('Hit')
+      expect(page).to have_content('Player 2 attacked')
+    end
+  end
 end
