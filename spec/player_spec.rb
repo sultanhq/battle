@@ -1,4 +1,5 @@
 require 'player.rb'
+require 'pry'
 
 describe Player do
 

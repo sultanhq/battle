@@ -16,6 +16,4 @@ attr_reader :name,:hp
     @hp -= DAMAGE_VALUE
   end
 
-
-
 end

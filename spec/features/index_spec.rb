@@ -22,4 +22,10 @@ feature Battle do
       expect(page).to have_content('Clinton attacked Trump')
     end
   end
+
+  context 'turns' do
+    scenario 'should show whose turn it is' do
+      expect(page).to have_content('Clinton\'s turn')
+    end
+  end
 end
