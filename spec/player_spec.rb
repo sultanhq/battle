@@ -21,12 +21,4 @@ subject(:player_2) {described_class.new("Trump")}
 
   end
 
-  context '.attack' do
-
-    it "should reduce hp by #{Player::DAMAGE_VALUE} when called" do
-      expect(player_1.attack(player_2)).to eq player_2.hp
-    end
-
-  end
-
 end

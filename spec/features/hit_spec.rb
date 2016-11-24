@@ -10,7 +10,7 @@ feature 'Hit' do
 
     scenario 'should show player 2\'s HP is reduced by 10 ' do
       click_button('Hit')
-      expect(page).to have_content('who now has 40 HP')
+      expect(page).to have_content('who now has 90 HP')
     end
 
   end
