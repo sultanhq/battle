@@ -8,17 +8,13 @@ feature Battle do
 
   context 'enter names' do
     it 'tests that filling in the player_1 and player_2 form returns the names' do
-      expect(page).to have_content('A vs B')
+      expect(page).to have_content('Clinton vs Trump')
     end
   end
 
   context 'hitpoints' do
     it 'checks player 2\'s hitpoints' do
       expect(page).to have_content('Hitpoints: 100')
-    end
-
-    it 'gets a confirmation that player2 has been attacked' do
-      expect(page).to have_content('Player 2 attacked')
     end
 
     it 'returns the confirmation when Hit button gets clicked on' do
