@@ -24,8 +24,16 @@ class Battle < Sinatra::Base
   get '/attack' do
     @game = $game
     @game.attack(@game.players.last)
-    erb :attack
-    # @game.switch_turns
+      if @game.dead_player.nil?
+        erb :attack
+      else
+        redirect '/game-over'
+      end
+  end
+
+  get '/game-over' do
+    @game = $game
+    erb :game_over
   end
 
   # start the server if ruby file executed directly
