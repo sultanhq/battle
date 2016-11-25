@@ -18,7 +18,7 @@ feature Battle do
     end
 
     scenario 'returns the confirmation when Hit button gets clicked on' do
-      click_button('Hit')
+      click_button('Attack')
       expect(page).to have_content('Clinton attacked Trump')
     end
   end

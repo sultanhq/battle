@@ -1,5 +1,5 @@
 <%= @game.players.first.name %> attacked <%= @game.players.last.name %> who now has <%= @game.players.last.hp %> HP
-
+<% @game.switch_turns %>
 <form action='/play'>
 <input type="submit" value="Next turn">
 </form>

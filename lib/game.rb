@@ -12,13 +12,7 @@ class Game
   end
 
   def switch_turns
-    @current_turn = opponent_of(current_turn)
-  end
-
-  private
-
-  def opponent_of(the_player)
-    @players.select {|player|player != the_player}.first
+    @current_turn = @players.rotate!.first
   end
 
 end

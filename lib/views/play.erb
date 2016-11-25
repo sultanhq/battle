@@ -2,10 +2,11 @@
 
 <%= @game.players.first.name %> vs <%= @game.players.last.name %> </br>
 </br>
-<%= @game.current_turn.name %>'s turn
-<form action='/hit'>
-<input type="submit" value="Hit">
+<form action='/attack'>
+<input type="submit" value="Attack">
 </form>
+<%= @game.current_turn.name %>'s turn
+</br>
 </br>
 <%= @game.players.first.name %>: Hitpoints: <%= @game.players.first.hp %> </br>
 <%= @game.players.last.name %>: Hitpoints: <%= @game.players.last.hp %>
